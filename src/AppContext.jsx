@@ -7,6 +7,9 @@ const initialState = {
   error: null,
   series: [],
   movies: [],
+  filterYear: 0,
+  currentPage: 1,
+  pageSize: 10,
 };
 
 // Crear contexto

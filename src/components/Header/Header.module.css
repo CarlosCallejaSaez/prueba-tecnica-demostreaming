@@ -1,9 +1,10 @@
 .header {
-    background-color: #1e1e1e;
+    background-color: #158bb9c9;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    
   }
   
   .logo {
@@ -25,10 +26,12 @@
   }
   
   .trialButton {
-    background-color: #0f80ff;
+    background-color: #021224;
     border: none;
     color: #ffffff;
     padding: 0.5rem 1rem;
     cursor: pointer;
   }
-  
+  .logo{
+    text-decoration: none;
+  }

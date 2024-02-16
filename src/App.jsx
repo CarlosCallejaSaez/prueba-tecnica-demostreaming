@@ -1,9 +1,11 @@
 import React, { useContext, useEffect } from 'react';
-import { AppProvider, AppContext } from './AppContext'; // Asegúrate de que las rutas sean correctas
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AppProvider, AppContext } from './AppContext'; 
 import SeriesPage from './pages/SeriesPage';
 import MoviesPage from './pages/MoviesPage';
-
+import HomePage from './pages/HomePage';
+import Layout from "../src/components/Layout/Layout"
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import "./App.css"
 const App = () => {
   const { state, dispatch } = useContext(AppContext);
 
@@ -11,7 +13,7 @@ const App = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_START' });
       try {
-        const response = await fetch('../data/sample.json'); // Ajusta la ruta según sea necesario
+        const response = await fetch('../data/sample.json'); 
         const data = await response.json();
         const filteredData = {
           series: data.entries
@@ -33,16 +35,19 @@ const App = () => {
   }, [dispatch]);
 
   if (state.loading) return <div>Loading...</div>;
-  if (state.error) return <div>Error: {state.error}</div>;
+  if (state.error) return <div>Oops, something went wrong...</div>;
 
   return (
 
     <Router>
-      <Routes>
-        <Route path="/series" element={<SeriesPage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-      </Routes>
-    </Router>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="series" element={<SeriesPage />} />
+            <Route path="movies" element={<MoviesPage />} />
+          </Route>
+        </Routes>
+      </Router>
     
   );
 };
