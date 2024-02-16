@@ -92,6 +92,13 @@ const SeriesPage = () => {
           </div>
         )}
       </Modal>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 };

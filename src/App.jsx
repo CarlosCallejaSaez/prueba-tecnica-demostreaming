@@ -8,12 +8,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import "./App.css"
 const App = () => {
   const { state, dispatch } = useContext(AppContext);
-
+  const sampleJsonUrl = new URL('../public/sample.json', import.meta.url).href;
   useEffect(() => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_START' });
       try {
-        const response = await fetch('/data/sample.json'); 
+        const response = await fetch(sampleJsonUrl); 
         const data = await response.json();
         const filteredData = {
           series: data.entries

@@ -89,10 +89,17 @@ const MoviesPage = () => {
             <p>{selectedItem.description}</p>
             <p>Release Year: {selectedItem.releaseYear}</p>
             <img style={{width:"200px"}}onError={addDefaultSrc} src={selectedItem.images['Poster Art'].url} alt={selectedItem.title} className={styles.modalImage} />
+            <br/>
+     
           </div>
         )}
       </Modal>
-      
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
     </>
   );
