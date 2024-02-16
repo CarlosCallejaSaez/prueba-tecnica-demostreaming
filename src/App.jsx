@@ -13,7 +13,7 @@ const App = () => {
     const fetchData = async () => {
       dispatch({ type: 'FETCH_START' });
       try {
-        const response = await fetch('../src/data/sample.json'); 
+        const response = await fetch('/data/sample.json'); 
         const data = await response.json();
         const filteredData = {
           series: data.entries
