@@ -1,8 +1,11 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { AppContext } from '../../AppContext';
-import Modal from '../Modal/Modal';
+
 import styles from './ContentList.module.css';
 import defaultImage from '../../../assets/Image-not-found.png';
+import ItemModal from '../ItemModal/ItemModal';
+import ContentFilter from '../ContentFilter/ContentFilter';
+import Pagination from '../Pagination/Pagination';
 
 
 const ContentList = ({ contentType, contentData }) => {
@@ -72,8 +75,8 @@ const ContentList = ({ contentType, contentData }) => {
   const firstItemIndex = lastItemIndex - itemsPerPage;
   const currentItems = filteredContent.slice(firstItemIndex, lastItemIndex);
 
-  const prevButtonDisabled = currentPage === 1;
-  const nextButtonDisabled = lastItemIndex >= filteredContent.length;
+  
+  const totalItems = filteredContent.length;
 
   return (
     <>
@@ -82,18 +85,19 @@ const ContentList = ({ contentType, contentData }) => {
       
         {!state.loading && !state.error && (
           <>
-            <label>Filter by Year: </label>
-            <input type="text" value={year} onChange={handleYearChange} />
-            <label> Items per page: </label>
-            <select value={itemsPerPage} onChange={(event) => setItemsPerPage(Number(event.target.value))}>
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="20">20</option>
-            </select>
-            <div className={styles.pagination}>
-              <button onClick={prevPage} disabled={prevButtonDisabled}>Previous Page</button>
-              <button onClick={nextPage} disabled={nextButtonDisabled}>Next Page</button>
-            </div>
+          <ContentFilter 
+              year={year} 
+              setYear={setYear} 
+              itemsPerPage={itemsPerPage} 
+              setItemsPerPage={setItemsPerPage} 
+            />
+            <Pagination 
+              currentPage={currentPage}
+              itemsPerPage={itemsPerPage}
+              totalItems={totalItems}
+              onNextPage={nextPage}
+              onPrevPage={prevPage}
+            />
           </>
         )}
       </div>
@@ -105,17 +109,11 @@ const ContentList = ({ contentType, contentData }) => {
           </div>
         ))}
       </div>
-   
-      <Modal show={selectedItem !== null} onClose={closeModal}>
-        {selectedItem && (
-          <div>
-            <h2>{selectedItem.title}</h2>
-            <p>{selectedItem.description}</p>
-            <p>Release Year: {selectedItem.releaseYear}</p>
-            <img onError={addDefaultSrc} src={selectedItem.images['Poster Art'].url} alt={selectedItem.title} style={{width:"200px"}} />
-          </div>
-        )}
-      </Modal>
+      <ItemModal
+        show={selectedItem !== null}
+        onClose={() => setSelectedItem(null)}
+        selectedItem={selectedItem}
+      />
       
     </>
   );
