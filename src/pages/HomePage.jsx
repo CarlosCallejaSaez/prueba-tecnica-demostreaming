@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css'; 
+import TopBar from "../components/TopBar/TopBar"
 
 const HomePage = () => {
-  return (
+  return (<>
+    <TopBar title="Popular Titles"/>
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h1>Popular Titles</h1>
-      </div>
-     
+      
       <div className={styles.cardContainer}>
         <Link to="/series" className={styles.card}>
           <div className={styles.imageWrapper}>
@@ -31,6 +30,7 @@ const HomePage = () => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 
