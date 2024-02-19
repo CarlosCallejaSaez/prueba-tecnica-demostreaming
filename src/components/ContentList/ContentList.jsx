@@ -79,8 +79,7 @@ const ContentList = ({ contentType, contentData }) => {
     <>
     
       <div>
-        {state.loading && <div>Loading...</div>}
-        {state.error && <div>Oops, something went wrong...</div>}
+      
         {!state.loading && !state.error && (
           <>
             <label>Filter by Year: </label>

@@ -11,6 +11,6 @@ export default defineConfig({
     // Configuración de pruebas
     globals: true,
     environment: 'jsdom',
-    setupFiles: './src/setupTests.js', // Opcional, si tienes configuraciones globales o extensiones para jest-dom
+    setupFiles: './src/setupTests.js', 
   },
 })

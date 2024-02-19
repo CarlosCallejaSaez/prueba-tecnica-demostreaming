@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { AppContext } from '../../AppContext'; 
+import TopBar from '../TopBar/TopBar';
 
 const Layout = () => {
   const { state } = useContext(AppContext); 
@@ -12,7 +13,8 @@ const Layout = () => {
     return(
       <>
       <Header />
-      <div>Loading...</div>
+      <TopBar title="Popular Titles" />
+      <div style={{margin:"50px"}}>Loading...</div>
       <Footer />
       </>
     ) 
@@ -22,7 +24,8 @@ const Layout = () => {
     return(
       <>
       <Header />
-      <div>Oops, something went wrong</div>
+      <TopBar title="Popular Titles" />
+      <div style={{margin:"50px"}}>Oops, something went wrong</div>
       <Footer />
       </>)
   }
