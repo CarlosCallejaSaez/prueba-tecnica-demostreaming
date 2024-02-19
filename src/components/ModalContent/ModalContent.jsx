@@ -1,5 +1,6 @@
 
 import React from 'react';
+import styles from './ModalContent.module.css';
 
 const ModalContent = ({ selectedItem, onClose }) => {
   const addDefaultSrc = (ev) => {

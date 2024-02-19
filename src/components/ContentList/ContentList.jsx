@@ -92,7 +92,7 @@ const ContentList = ({ contentType, contentData }) => {
         {currentItems.map((item, index) => (
           <div key={index} className={styles.card} onClick={() => openModal(item)}>
             <img onError={addDefaultSrc} src={item.images['Poster Art'].url} alt={item.title} className={styles.cardImage} />
-            <h3 className={styles.cardTitle}>{item.title}</h3>
+            <p className={styles.cardTitle}>{item.title}</p>
           </div>
         ))}
       </div>

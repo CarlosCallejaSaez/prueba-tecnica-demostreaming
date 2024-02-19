@@ -3,6 +3,9 @@ import { Outlet } from 'react-router-dom';
 import TopBar from '../TopBar/TopBar';
 
 const BodyContent = ({ isLoading, isError }) => {
+
+
+
   if (isLoading || isError) {
     return (
       <>
