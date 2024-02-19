@@ -17,7 +17,11 @@ const BodyContent = ({ isLoading, isError }) => {
     );
   }
 
-  return <Outlet />;
+  return (
+    <div >
+      <Outlet />
+    </div>
+  );
 };
 
 export default BodyContent;

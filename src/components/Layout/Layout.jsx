@@ -10,9 +10,9 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main>
+     
         <BodyContent isLoading={state.loading} isError={state.error} />
-      </main>
+      
       <Footer />
     </>
   );
