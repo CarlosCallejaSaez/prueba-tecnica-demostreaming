@@ -1,75 +1,88 @@
+
 .footer {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  padding: 1rem 0;
-  text-align: center;
-  position: fixed; 
-  bottom: 0; 
-  left: 0; 
-  width: 100%; 
-  z-index: 100; 
-}
-
-.links {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 1rem;
-  list-style: none;
-}
-
-.links a {
-  color: #ffffff;
-  margin: 0 1rem;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-.copyRight {
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
+  flex-direction: column;
+  width: 98vw;
+  background-color: #1a1a1a;
+  color: #fff;
+  padding: 20px 30px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
 }
 
 .socialsAndStores {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-.socialLinks,
-.storeLinks {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem 0;
+.links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 30px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.links a:last-child {
+  margin-right: 0;
+}
+
+.copyRight {
+  font-size: 12px;
+  margin: 30px;
 }
 
 .socialLinks a,
 .storeLinks a {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 0.5rem;
+  margin-right: 20px;
 }
 
 .socialLinks a img,
 .storeLinks a img {
-  height: 24px;
   width: auto;
+  height: 20px;
+}
+
+.storeLinks a img {
+  height: 40px;
 }
 
 
-.socialLinks a:hover,
-.storeLinks a:hover {
-  opacity: 0.8;
-}
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px;
+  }
 
-@media (min-width: 768px) {
+  .links,
   .socialsAndStores {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
-  .socialLinks,
-  .storeLinks {
-    margin: 0;
+  .links a {
+    margin: 10px;
   }
+
+  .socialLinks a,
+  .storeLinks a {
+    margin: 10px 10px;
+  }
+
+  .copyRight {
+    margin-top: 20px;
+  }
+}
+
+
+.links a:hover,
+.socialLinks a:hover {
+  opacity: 0.7;
+}
+
+.storeLinks a:hover {
+  transform: scale(1.05);
 }

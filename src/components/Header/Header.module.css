@@ -1,37 +1,39 @@
 .header {
-    background-color: #158bb9c9;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    color: #ffffff;
-  }
-  
-  .authLinks {
-    display: flex;
-    align-items: center;
-  }
-  
-  .loginButton {
-    background: none;
-    border: none;
-    color: #ffffff;
-    margin-right: 1rem;
-    cursor: pointer;
-  }
-  
-  .trialButton {
-    background-color: #021224;
-    border: none;
-    color: #ffffff;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-  }
-  .logo{
-    text-decoration: none;
-  }
+  background-color: #007bff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-decoration: none;
+ 
+}
+
+.authLinks {
+  display: flex;
+  gap: 15px;
+}
+
+.loginButton {
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.trialButton {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}

@@ -77,7 +77,7 @@ const SeriesPage = () => {
           <div key={index} className={styles.card} onClick={() => openModal(item)}>
             <img onError={addDefaultSrc}  src={item.images['Poster Art'].url} alt={item.title} className={styles.cardImage} />
             <h3 className={styles.cardTitle}>{item.title}</h3>
-            <p className={styles.cardSubTitle}>Program Title</p>
+            
           </div>
         ))}
       </div>
@@ -92,13 +92,7 @@ const SeriesPage = () => {
           </div>
         )}
       </Modal>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      
     </div>
   );
 };

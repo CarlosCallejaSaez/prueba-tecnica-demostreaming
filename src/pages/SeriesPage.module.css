@@ -1,56 +1,57 @@
 .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    
-  }
-  
-  .card {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    border: 5px solid transparent;
-  transition: opacity 0.3s ease, border-color 0.3s ease;
-  }
-  
-  .cardImage {
-    width: 100%;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    
-  }
-  
-  .cardContent {
-    padding: 10px;
-  }
-  
-  .card:hover .cardImage {
-    transform: scale(1.03);
-  }
-  .card:hover  {
-    opacity: 0.7;
-    border-color: white;
-  }
+  display: grid;
+  grid-template-columns:  1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 30px;
+  margin-bottom: 200px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
  
-  
-  .cardTitle {
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 0;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover;
+}
+
+.cardTitle {
+  margin: 0.5rem 0;
+}
+
+.cardSubTitle {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalImage {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   }
-  
-  .cardSubTitle {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-  }
-  
- 
-  
+}
