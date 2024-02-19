@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 30px;
+  padding-left: 50px;
 }
 
 .logo {
@@ -29,7 +30,7 @@
 }
 
 .trialButton {
-  background-color: #1f1f1f;
+  background-color: rgb(62, 55, 55);
   color: #ffffff;
   border: none;
   padding: 8px 16px;

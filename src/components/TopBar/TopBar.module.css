@@ -1,8 +1,9 @@
 
 .topBar {
-    background-color: black;
+    background-color: rgb(62, 55, 55);
     color: white;
     padding: 10px;
+    padding-left: 50px;
     
   }
   

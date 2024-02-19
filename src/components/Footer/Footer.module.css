@@ -19,13 +19,26 @@
   align-items: center;
   flex-wrap: wrap;
 }
-
+.links{
+  margin-left: 90px;
+}
 .links a {
+
   color: #fff;
   text-decoration: none;
-  margin: 30px;
+  margin: 15px;
   font-size: 12px;
   line-height: 1.5;
+ 
+}
+
+.links a::after {
+  content: "|"; /* This adds the vertical bar */
+  margin-left: 10px; /* Adjust spacing after the bar as needed */
+}
+
+.links a:last-child::after {
+  content: none; /* Removes the bar after the last item */
 }
 
 .links a:last-child {
@@ -34,9 +47,14 @@
 
 .copyRight {
   font-size: 12px;
-  margin: 30px;
+  margin-top: 30px;
+  margin-left: 100px;
 }
 
+.socialLinks{
+  margin:25px;
+  margin-left: 100px;
+}
 .socialLinks a,
 .storeLinks a {
   margin-right: 20px;
@@ -66,6 +84,12 @@
   .links a {
     margin: 10px;
   }
+
+  .links a::after {
+    content: "|"; /* This adds the vertical bar */
+    margin-left: 15px; /* Adjust spacing after the bar as needed */
+  }
+
 
   .socialLinks a,
   .storeLinks a {
