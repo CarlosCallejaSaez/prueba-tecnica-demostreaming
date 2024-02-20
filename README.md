@@ -1,5 +1,6 @@
 # Prueba técnica — React developer
 
+🚀[Deploy Prueba Técnica Netlify](https://silver-chaja-aa9375.netlify.app/)
 
 ## Objetivo
 
