@@ -6,15 +6,14 @@ import ItemModal from '../ItemModal/ItemModal';
 import ContentFilter from '../ContentFilter/ContentFilter';
 import Pagination from '../Pagination/Pagination';
 
+import jsonData from '../../sample.json'; 
+
 const ContentList = ({ contentType, contentData }) => {
   const { state, dispatch } = useContext(AppContext);
   const [selectedItem, setSelectedItem] = useState(null);
   const [year, setYear] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(20);
-
-  
-  const sampleJsonUrl = new URL('../../sample.json', import.meta.url).href;
 
   const filterAndSortContent = (data, contentType, releaseYear) => {
     return data.entries
@@ -24,22 +23,18 @@ const ContentList = ({ contentType, contentData }) => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: 'FETCH_START' });
-      try {
-        const response = await fetch(sampleJsonUrl);
-        const data = await response.json();
-        const filteredSeries = filterAndSortContent(data, 'series', 2010);
-        const filteredMovies = filterAndSortContent(data, 'movie', 2010);
-        const filteredData = { series: filteredSeries, movies: filteredMovies };
-        dispatch({ type: 'FETCH_SUCCESS', payload: filteredData });
-      } catch (error) {
-        dispatch({ type: 'FETCH_ERROR', payload: error.toString() });
-      }
-    };
-
-    fetchData();
-  }, [dispatch, sampleJsonUrl]); 
+    dispatch({ type: 'FETCH_START' });
+    try {
+      
+      const data = jsonData;
+      const filteredSeries = filterAndSortContent(data, 'series', 2010);
+      const filteredMovies = filterAndSortContent(data, 'movie', 2010);
+      const filteredData = { series: filteredSeries, movies: filteredMovies };
+      dispatch({ type: 'FETCH_SUCCESS', payload: filteredData });
+    } catch (error) {
+      dispatch({ type: 'FETCH_ERROR', payload: error.toString() });
+    }
+  }, [dispatch]); 
 
   const addDefaultSrc = (ev) => {
     ev.target.src = defaultImage;
