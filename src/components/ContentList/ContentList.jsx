@@ -14,7 +14,7 @@ const ContentList = ({ contentType, contentData }) => {
   const [itemsPerPage, setItemsPerPage] = useState(20);
 
   
-  const sampleJsonUrl = new URL('../../../public/sample.json', import.meta.url).href;
+  const sampleJsonUrl = new URL('../../sample.json', import.meta.url).href;
 
   const filterAndSortContent = (data, contentType, releaseYear) => {
     return data.entries

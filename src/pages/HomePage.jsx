@@ -11,7 +11,7 @@ const HomePage = () => {
       <div className={styles.cardContainer}>
         <Link to="/series" className={styles.card}>
           <div className={styles.imageWrapper}>
-            <img src='./../../assets/placeholder.png' alt="Series" />
+            <img src='/placeholder.png' alt="Series" />
           </div>
           <span className={styles.cardTitle}>SERIES</span>
           <p className={styles.cardSubtitle}>Popular Series</p>
@@ -23,7 +23,7 @@ const HomePage = () => {
         
         <Link to="/movies" className={styles.card}>
           <div className={styles.imageWrapper}>
-            <img src='./../../assets/placeholder.png' alt="Movies" />
+            <img src='/placeholder.png' alt="Movies" />
           </div>
           <span className={styles.cardTitle}>MOVIES</span>
           <p className={styles.cardSubtitle}>Popular Movies</p>
