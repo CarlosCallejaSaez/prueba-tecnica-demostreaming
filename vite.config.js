@@ -6,7 +6,6 @@ import { visualizer } from 'rollup-plugin-visualizer';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), viteSingleFile(), visualizer()],
-  base: "/prueba-tecnica-demostreaming/",
   test: {
     // Configuración de pruebas
     globals: true,
